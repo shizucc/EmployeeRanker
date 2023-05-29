@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cli-table3": "^0.6.3",
+    "mathjs": "^11.8.0",
+    "sqlite3": "^5.1.6",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2"
+  }
+}
