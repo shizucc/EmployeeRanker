@@ -3,7 +3,7 @@ const db = new sqlite3.Database('karyawan_db')
 const { faker } = require('@faker-js/faker');
 const yargs = require('yargs')
 const Table = require('cli-table3')
-const count = require('./count')
+const count = require('./count.js')
 
 db.serialize(()=>{
     db.run('CREATE TABLE IF NOT EXISTS karyawan (nama varchar(255), absensi INT, sikap INT, komunikasi INT, kualitas_kerja INT, kerja_sama INT)',(res,err)=>{
