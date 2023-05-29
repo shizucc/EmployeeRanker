@@ -204,18 +204,25 @@ const count = () => {
             console.log(jarak_data);
 
             //MENGHITUNG NILAI PREFERENSI
-            const nilai_preferensi = {
-                Nama: Array(),
-                nilai: Array()
-            }
+            let nilai_preferensi = Array();
 
             for (let i = 0; i < tabel_normalisasi.Nama.length; i++) {
-                nilai_preferensi.Nama.push(tabel_normalisasi.Nama[i]);
-
                 //PERHITUNGAN NILAI PREFERENSI
-                nilai_preferensi.nilai.push(jarak_data.jarak_negatif[i] / (jarak_data.jarak_positif[i] + jarak_data.jarak_negatif[i]));
+                let nama = tabel_normalisasi.Nama[i];
+                let nilai = jarak_data.jarak_negatif[i] / (jarak_data.jarak_positif[i] + jarak_data.jarak_negatif[i]);
+
+                nilai_preferensi.push([nama, nilai]);
             }
             console.log("\n\n=== NILAI PREFERENSI DARI SETIAP DATA===\n\n")
+            console.log(nilai_preferensi);
+
+
+            // MENGURUTKAN NILAI PREFERENSI DARI YANG TERBESAR
+            nilai_preferensi.sort((a, b) => {
+                return (a[1] - b[1]) * -1;
+            })
+
+            console.log("\n\n=== NILAI PREFERENSI DIURUTKAN DARI TERBESAR===\n\n");
             console.log(nilai_preferensi);
         })
     })
